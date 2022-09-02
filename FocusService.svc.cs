@@ -1169,6 +1169,16 @@ namespace PrjInbound
                                     billRef.Add("ref", _ref);
                                     billRef.Add("tag", 0);
                                     RefList.Add(billRef);
+
+                                    row = new Hashtable
+                                    {
+                                        { "Account", objfocus.Body[i].Customer_Id},
+                                        { "Amount",Math.Abs(objfocus.Body[i].Amount)},
+                                        { "Reference",RefList},
+                                        { "sRemarks",objfocus.Body[i].sRemarks}
+
+                                    };
+                                    body.Add(row);
                                 }
                                 else
                                 {
